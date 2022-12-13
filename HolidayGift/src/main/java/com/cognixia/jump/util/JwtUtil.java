@@ -81,7 +81,7 @@ public class JwtUtil {
     }
 
     // returns those generated tokens after a successful authentication
-    public String generatedTokeString(UserDetails userDetails) {
+    public String generateTokens(UserDetails userDetails) {
 
         // Claims info/data you want to include in payload of token besides the user
         // info
