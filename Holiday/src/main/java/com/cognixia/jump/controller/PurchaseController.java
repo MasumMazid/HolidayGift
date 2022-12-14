@@ -25,21 +25,19 @@ public class PurchaseController {
 	
 		
 	
-	@PostMapping("/add")
+	@PostMapping("/{user_id}/add")
 	public Purchase addPurchase(@RequestBody Purchase purchase) {
 		return purchaseService.addPurchase(purchase);
-	
 	}
 	
-	@DeleteMapping
-	public long removeGift(@RequestBody Purchase purchase) {
-		return purchaseService.deletePurchase(purchase);
+	@DeleteMapping("/delete/{purchase_id}/{user_id}")
+	public String removeGift(@RequestBody Purchase purchase, @RequestBody long user_id) {
+		return purchaseService.deletePurchase(purchase, user_id);
 	}
 	
-	@GetMapping("/purchaseid/{username}")
+	@GetMapping("/purchaseList/{user_id}")
 	public List<Object> getAllPurchasebyCustomer(@PathVariable User user) {
 		return purchaseService.getAllPurchasebyCustomer(user);
-		
 	}
 
 

@@ -43,12 +43,18 @@ public class PurchaseService {
 	
 	
 	
-	public long deletePurchase(Purchase purchase){
-		PurchaseRepo.delete(purchase);
-	return purchase.getPurchase_id();
+	public String deletePurchase(Purchase purchase, long user){
 		
-		
-	}
+			if(purchase.getUser_id()==user) {	
+				PurchaseRepo.delete(purchase);
+				String s = String.valueOf(purchase.getPurchase_id());
+				return s;
+			}else {
+				return "No such order";
+			}
+		}
+
+	
 	
 	
 	
