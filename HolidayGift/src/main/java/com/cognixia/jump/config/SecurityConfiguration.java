@@ -34,12 +34,13 @@ public class SecurityConfiguration {
 
     @Bean
     protected SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
-
-
+    	
         http.csrf().disable()
             .authorizeRequests()
-            .antMatchers("/authenticate").permitAll()
-            .antMatchers(HttpMethod.POST, "/api/user").permitAll()
+            .antMatchers("/authenticate").permitAll() 							// All can authenticate
+            .antMatchers(HttpMethod.POST, "/user").permitAll() 					// All can create a user
+            .antMatchers("/user").hasAnyRole("ADMIN") 							// Only Admin can view all users
+            .anyRequest().authenticated() 										// Allows all other API calls if they are user and authenticated
             .and()
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
