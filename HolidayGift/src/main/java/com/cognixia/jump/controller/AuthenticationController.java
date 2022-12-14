@@ -1,7 +1,5 @@
 package com.cognixia.jump.controller;
 
-import org.apache.catalina.connector.Response;
-import org.apache.logging.log4j.message.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;

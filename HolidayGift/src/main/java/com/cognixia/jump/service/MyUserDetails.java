@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import com.cognixia.jump.model.User;
 
 // Class used by spring security to find all of the necessary information
+// Provides core user information
 public class MyUserDetails implements UserDetails {
 
     private static final long serialVersionUID = 1L;

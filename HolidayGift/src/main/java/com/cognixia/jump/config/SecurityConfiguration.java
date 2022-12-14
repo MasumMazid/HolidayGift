@@ -1,7 +1,5 @@
 package com.cognixia.jump.config;
 
-import javax.security.auth.message.config.AuthConfig;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -55,6 +53,7 @@ public class SecurityConfiguration {
     protected PasswordEncoder encoder(){
 
         return new BCryptPasswordEncoder();
+        
     }
 
     // load the encoder & user details service that are needed for spring security
