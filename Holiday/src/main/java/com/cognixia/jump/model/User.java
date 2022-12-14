@@ -21,7 +21,7 @@ public class User implements Serializable {
 
 	// HAS TO BE SET UP LIKE THIS!!!!!!!! ROLE_******
 	public static enum Role {
-		ROLE_USER, ROLE_ADMIN
+		ROLE_USER, ROLE_CUSTOMER, ROLE_ADMIN
 	}
 
 	@Id
