@@ -21,8 +21,9 @@ import com.cognixia.jump.util.JwtUtil;
 // filters in spring are used to filter through requests/responses
 // perform some check for security before a request is completed or a response is sent
 
-// this filter will intercept every request coming in and examine the header for tokens
+// Filter 
 
+// this filter will intercept every request coming in and examine the header for tokens
 // will label this as a component so spring can recognize it and be able to autowire some of its properties
 // and call it to filter requests before sending any responses
 @Component
