@@ -3,6 +3,8 @@ package com.cognixia.jump.service;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.StreamingHttpOutputMessage.Body;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -30,7 +32,8 @@ public class MyUserDetailsService implements UserDetailsService {
 
         // if we can't find the user in our table, that means they don't exist
         if (userFound.isEmpty()) {
-            // TODO throw new UsernameNotFoundException(username)
+            //return ResponseEntity.status(404).body("User not found");
+            throw new UsernameNotFoundException(username);
         }
         return new MyUserDetails(userFound.get());
     }

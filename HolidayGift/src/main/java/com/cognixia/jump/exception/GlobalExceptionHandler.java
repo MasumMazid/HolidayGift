@@ -19,4 +19,14 @@ public class GlobalExceptionHandler {
 		
 	}
 
+
+	@ExceptionHandler(UsernameNotFoundException.class)
+	public ResponseEntity<?> usernameNotFoundException( UsernameNotFoundException ex, WebRequest request){
+
+		ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(), request.getDescription(false));
+
+		return ResponseEntity.status(404).body(errorDetails);
+
+	}
+
 }
