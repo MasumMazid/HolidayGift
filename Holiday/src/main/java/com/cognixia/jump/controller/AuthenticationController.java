@@ -18,7 +18,7 @@ import com.cognixia.jump.util.JwtUtil;
 
 // authentication manager -> validates/authenticates user credentials
 
-// @CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class AuthenticationController {
 

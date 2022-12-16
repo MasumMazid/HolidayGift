@@ -16,7 +16,7 @@ import com.cognixia.jump.model.User;
 import com.cognixia.jump.service.PurchaseService;
 
 
-// @CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/purchase")
 public class PurchaseController {
