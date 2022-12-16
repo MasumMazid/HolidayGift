@@ -7,6 +7,7 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +17,8 @@ import com.cognixia.jump.model.AuthenticationResponse;
 import com.cognixia.jump.util.JwtUtil;
 
 // authentication manager -> validates/authenticates user credentials
+
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class AuthenticationController {
 
@@ -44,6 +47,8 @@ public class AuthenticationController {
         } catch (BadCredentialsException e){
             // Provide our own message on why login did't work
             throw new Exception("Incorrect user or password");
+            //return ResponseEntity.status(401).body("Incorrect user or password");
+
         }
 
         // If no exception was thrown, user is valid

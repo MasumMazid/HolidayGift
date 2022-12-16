@@ -15,7 +15,7 @@ public class Purchase {
 	private long  purchase_id;
 
 	@Column(columnDefinition="VARCHAR(45)")
-	private int user_id;
+	private int UserId;
 	
 	@Column(columnDefinition="VARCHAR(45)")
 	private int product_id;
@@ -30,7 +30,7 @@ public class Purchase {
 	public Purchase(long purchase_id, int user_id, int product_id, int quantity) {
 		super();
 		this.purchase_id = purchase_id;
-		this.user_id = user_id;
+		this.UserId = user_id;
 		this.product_id = product_id;
 		this.quantity = quantity;
 	}
@@ -53,11 +53,11 @@ public class Purchase {
 	}
 
 	public int getUser_id() {
-		return user_id;
+		return UserId;
 	}
 
 	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+		this.UserId = user_id;
 	}
 
 	public int getQuantity() {
@@ -70,6 +70,7 @@ public class Purchase {
 
 	
 }
+
 	
 	
 	

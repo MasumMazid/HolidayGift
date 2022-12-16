@@ -1,7 +1,7 @@
 package com.cognixia.jump.repo;
 
+import java.util.List;
 import java.util.Optional;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,4 +15,9 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     // - Optional is returned b/c there's a chance the username doesn't exist in our
     // user table
     public Optional<User> findByUsername(String username);
+
+    // public List<User> myFindByUsername(String username);
+
+
+
 }

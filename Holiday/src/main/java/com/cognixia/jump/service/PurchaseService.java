@@ -29,30 +29,32 @@ public class PurchaseService {
 //		
 //	}
 	
-	public List<Object> getAllPurchasebyCustomer(User user){
-		List<Object> PurchasesByID = new ArrayList<>();
-		long id=user.getId();
-		PurchasesByID.add(PurchaseRepo.findById(id));
-		return PurchasesByID;
+	public List<Purchase> getAllPurchaseByCustomer(int UserId){
 		
-	}
-	
-	
-	
-	public String deletePurchase(Purchase purchase, long user){
 		
-			if(purchase.getUser_id()==user) {	
-				PurchaseRepo.delete(purchase);
-				String s = String.valueOf(purchase.getPurchase_id());
-				return s;
-			}else {
-				return "No such order";
+		List<Purchase> Purchases= PurchaseRepo.getAllPurchases();
+		List<Purchase> PurchasesByID = new ArrayList<Purchase>();
+		for (Purchase p: Purchases) {
+			if(p.getUser_id()==UserId) {
+				PurchasesByID.add(p);
 			}
 		}
-
+		return PurchasesByID;
+	}
 	
+	public String deletePurchase(int UserID,int PurchaseID ){
+		List<Purchase> Purchases= PurchaseRepo.getAllPurchases();
+		for (Purchase p: Purchases) {
+			if(p.getPurchase_id()==PurchaseID && p.getUser_id()==UserID) {
+				PurchaseRepo.delete(p);
+				return "Your purchase has been deleted";
+			}
+		}
+		
 	
-	
+		return "Purchase not found";
+			
+		}
 	
 }
 	
