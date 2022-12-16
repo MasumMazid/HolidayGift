@@ -35,6 +35,10 @@ public class SecurityConfiguration {
     	
         http.csrf().disable()
             .authorizeRequests()
+            .antMatchers("/swagger-ui-custom.html").permitAll()
+            .antMatchers("/swagger-ui/index.html").permitAll()
+            .antMatchers("/v3/api-docs/").permitAll()
+            .antMatchers("/api-docs/").permitAll()
             .antMatchers("/authenticate").permitAll() 							// All can authenticate
             .antMatchers(HttpMethod.POST, "/user").permitAll() 					// All can create a user
             .antMatchers("/user").hasAnyRole("ADMIN") 							// Only Admin can view all users

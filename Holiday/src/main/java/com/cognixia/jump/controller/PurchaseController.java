@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cognixia.jump.model.Purchase;
-import com.cognixia.jump.model.User;
 import com.cognixia.jump.service.PurchaseService;
 
 
