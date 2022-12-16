@@ -73,11 +73,18 @@
 			<scope>test</scope>
 		</dependency>
 
-<!--  automatically generate the OpenAPI 3 specification docs for our API -->
+		<!--  automatically generate the OpenAPI 3 specification docs for our API -->
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-ui</artifactId>
 			<version>1.6.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
 		</dependency>
 
 

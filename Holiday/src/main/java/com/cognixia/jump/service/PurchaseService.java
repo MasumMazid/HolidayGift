@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 import com.cognixia.jump.model.Purchase;
-import com.cognixia.jump.model.User;
 import com.cognixia.jump.repo.PurchaseRepository;
 
+
+// Service for MySQL database, pr and Purchases  
 @Service
 public class PurchaseService {
 	@Autowired
@@ -21,13 +22,7 @@ public class PurchaseService {
 		PurchaseRepo.save(purchase);
 		return purchase;
 	}
-//	public List<Object> getAllPurchasebyCustomer(Customer customer){
-//		List<Object> PurchasesByID = new ArrayList<>();
-//		long id=customer.getId();
-//		PurchasesByID.add(PurchaseRepo.findById(id));
-//		return PurchasesByID;
-//		
-//	}
+
 	
 	public List<Purchase> getAllPurchaseByCustomer(int UserId){
 		

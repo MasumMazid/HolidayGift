@@ -22,7 +22,6 @@ import com.cognixia.jump.util.JwtUtil;
 @RestController
 public class AuthenticationController {
 
-    // authentication manager -> validates/authenticates user credentials
     @Autowired
     AuthenticationManager authenticationManager;
 
@@ -33,7 +32,7 @@ public class AuthenticationController {
     JwtUtil jwtUtil;
 
 
-    // Create the token at http://localhost:8080/authenticate
+    // Create the token
     // send the username & password and try to generate a token as a response
     @PostMapping("/authenticate")
     public ResponseEntity<?> createJwtToken(@RequestBody AuthenticationRequest request) throws Exception{

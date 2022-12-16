@@ -20,6 +20,10 @@ import com.cognixia.jump.exception.ResourceNotFoundException;
 import com.cognixia.jump.model.User;
 import com.cognixia.jump.service.UserService;
 
+
+// User Controller will be used to handel API request for
+// all request involving users 
+
 // @CrossOrigin(origins = "http://54.157.103.186:8080")
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -32,11 +36,14 @@ public class UserController {
 	@Autowired
 	PasswordEncoder encoder;
 
+
+	// Get all users 
 	@GetMapping("/user")
 	public List<User> getAllUsers() {
 		return repo.getAllUsers();
 	}
 
+	// Get user by id number
 	@GetMapping("/user/{id}")
 	public ResponseEntity<?> getUserById(@PathVariable int id) throws ResourceNotFoundException {
 
@@ -50,6 +57,7 @@ public class UserController {
 
 	}
 
+	// Create a User
 	@PostMapping("/user")
 	public ResponseEntity<?> createUser(@Valid @RequestBody User user) {
 		// make sure id is autoincremented
@@ -63,6 +71,7 @@ public class UserController {
 		return ResponseEntity.status(201).body(created);
 	}
 
+	// Find by Username
 	@GetMapping("/finduser/username")
 	public ResponseEntity<?> getUserByName(@RequestParam String username) {
 		Optional<User> user = repo.findByUserName(username);
