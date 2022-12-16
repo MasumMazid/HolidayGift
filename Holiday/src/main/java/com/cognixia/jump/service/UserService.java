@@ -32,7 +32,17 @@ public class UserService {
     }
 
     public Optional<User> findByUserName(String username){
-        return repo.findbyUsername(username);
+        return repo.findByUsername(username);
     }
+
+    // TODO: Delete function
+
+    // public int deleteUser(int username_id) {
+    //     return repo.deleteById(username_id);
+    // }
+
+    // public List<User> myFindByUserName(String username){
+    //     return repo.myFindByUsername(username);
+    // }
 
 }
