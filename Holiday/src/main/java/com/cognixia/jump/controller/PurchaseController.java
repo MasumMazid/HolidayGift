@@ -24,24 +24,30 @@ public class PurchaseController {
 	@Autowired
 	PurchaseService purchaseService;
 	
+	@DeleteMapping("/purchaseList/{user_id}/{purchase_id}")
+    public String  deletePurchase(@PathVariable int user_id,@PathVariable int purchase_id) {
 		
+		return purchaseService.deletePurchase(user_id, purchase_id);
+    	
+    }	
 	
 	@PostMapping("/{user_id}/add")
 	public Purchase addPurchase(@RequestBody Purchase purchase) {
 		return purchaseService.addPurchase(purchase);
 	}
 	
-	@DeleteMapping("/delete/{purchase_id}/{user_id}")
+	/*@DeleteMapping("/delete/{purchase_id}/{user_id}")
 	public String removeGift(@RequestBody Purchase purchase, @RequestBody long user_id) {
 		return purchaseService.deletePurchase(purchase, user_id);
+	}*/
+	
+	@GetMapping("/purchaseList/{user_id}")
+	public List<Purchase> getAllPurchasebyCustomer(@PathVariable int user_id){
+	
+		return purchaseService.getAllPurchaseByCustomer(user_id);
 	}
 	
-	// @GetMapping("/purchaseList/{user_id}")
-	// public List<Object> getAllPurchasebyCustomer(@PathVariable long user_id) {
-	// 	return purchaseService.getAllPurchasebyCustomer(user_id);
-	// }
-
-
+	
 
 	
 }
