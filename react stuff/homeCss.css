@@ -1,0 +1,64 @@
+.EntirePage{
+  background-color:lightblue;width:100%;height:3000px;position:absolute;
+
+}
+.Header{
+  position: absolute;width:100%;backgroundcolor:white
+}
+.headertable{
+  background-color:lightyellow;width:25%;
+  border-width:10px;margin:25px
+}
+.items{
+  position: absolute;
+    left: 50%;
+    width: 45%;
+    height: 100%;
+    border: 3px solid red;
+    background-color:teal
+}
+.orderlist{
+  margin:20px;font-size:34px
+}
+.UserDetails{
+  position: absolute;
+    right: 50%;
+    width: 45%;
+    height: 100%;
+    border: 3px solid red;
+    background-color: orange
+}
+.btn{
+background-color: lightgreen;
+  cursor:pointer;
+   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.btn:hover {
+  background-color: darkblue;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.img1{
+  width:45%;hieght:100%;left: auto;
+}
+.listimgs{
+  height: 300px;
+  width: 300px;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+tr:nth-child(odd) {
+  background-color: lightyellow;
+}
