@@ -3,6 +3,7 @@ package com.cognixia.jump.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -16,21 +17,18 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.cognixia.jump.filter.JwtRequestFilter;
+import com.cognixia.jump.service.MyUserDetailsService;
 
 @Configuration
 public class SecurityConfiguration {
+    
     @Autowired
-    UserDetailsService userDetailsService;
+    MyUserDetailsService MyuserDetailsService;
 
     @Autowired
     JwtRequestFilter jwtRequestFilter;
+    
 
-    @Bean
-    protected UserDetailsService userDetailsService(){
-        
-        
-        return userDetailsService;
-    }
 
     @Bean
     protected SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
@@ -63,7 +61,7 @@ public class SecurityConfiguration {
     protected DaoAuthenticationProvider authenticationProvider(){
         DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
 
-        authenticationProvider.setUserDetailsService(userDetailsService);
+        authenticationProvider.setUserDetailsService(MyuserDetailsService);
         authenticationProvider.setPasswordEncoder(encoder());
 
         return authenticationProvider;

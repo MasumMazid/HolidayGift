@@ -1,8 +1,8 @@
 package com.cognixia.jump.repo;
 
 import java.util.Optional;
-
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.cognixia.jump.model.User;
@@ -15,4 +15,9 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     // - Optional is returned b/c there's a chance the username doesn't exist in our
     // user table
     public Optional<User> findByUsername(String username);
+
+        // @Query("SELECT DISTINCT a.username FROM User a")
+        public Optional <User> findbyUsername(String username);
+
+
 }

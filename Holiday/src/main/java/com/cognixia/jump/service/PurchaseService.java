@@ -29,13 +29,18 @@ public class PurchaseService {
 //		
 //	}
 	
-	public List<Object> getAllPurchasebyCustomer(User user){
-		List<Object> PurchasesByID = new ArrayList<>();
-		long id=user.getId();
-		PurchasesByID.add(PurchaseRepo.findById(id));
-		return PurchasesByID;
-		
-	}
+	// public List<Object> getAllPurchasebyCustomer(Integer user_id){
+	// 	// List<Object> PurchasesByID = new ArrayList<>();
+	// 	// long id=user_id;
+	// 	// PurchasesByID.add(PurchaseRepo.findById(id));
+
+
+	// 	return PurchasesByID;
+	// }
+
+	// public List<Purchase> findByUserId(Integer user_id){
+
+	// }
 	
 	
 	
@@ -49,6 +54,10 @@ public class PurchaseService {
 				return "No such order";
 			}
 		}
+
+	public List<Object> getAllPurchasebyCustomer(long user_id) {
+		return null;
+	}
 
 	
 	

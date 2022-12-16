@@ -2,6 +2,7 @@ package com.cognixia.jump.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,7 +16,7 @@ import com.cognixia.jump.model.User;
 import com.cognixia.jump.service.PurchaseService;
 
 
-
+// @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/purchase")
 public class PurchaseController {
@@ -35,10 +36,10 @@ public class PurchaseController {
 		return purchaseService.deletePurchase(purchase, user_id);
 	}
 	
-	@GetMapping("/purchaseList/{user_id}")
-	public List<Object> getAllPurchasebyCustomer(@PathVariable User user) {
-		return purchaseService.getAllPurchasebyCustomer(user);
-	}
+	// @GetMapping("/purchaseList/{user_id}")
+	// public List<Object> getAllPurchasebyCustomer(@PathVariable long user_id) {
+	// 	return purchaseService.getAllPurchasebyCustomer(user_id);
+	// }
 
 
 
