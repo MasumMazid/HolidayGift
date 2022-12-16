@@ -21,6 +21,7 @@ import com.cognixia.jump.model.User;
 import com.cognixia.jump.service.UserService;
 
 // @CrossOrigin(origins = "http://54.157.103.186:8080")
+
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class UserController {
